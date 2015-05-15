@@ -327,15 +327,15 @@ class InfoRequestEvent < ActiveRecord::Base
 
 
     def is_incoming_message?
-        !incoming_message.nil?
+        incoming_message_id? or incoming_message
     end
 
     def is_outgoing_message?
-        !self.outgoing_message.nil?
+        outgoing_message_id? or outgoing_message
     end
 
     def is_comment?
-        !self.comment.nil?
+        comment_id? or comment
     end
 
     # Display version of status
